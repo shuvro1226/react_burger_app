@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Auxilary from '../../../hoc/Auxilary'
-// import styles from './Modal.module.css';
+import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
     const ingrdientSummary = Object.keys(props.ingredients)
@@ -20,7 +20,10 @@ const orderSummary = (props) => {
             <ul>
                 {ingrdientSummary}
             </ul>
+            <p><strong>Total Price: {props.price.toFixed(2)}</strong></p>
             <p>Continue to checkout?</p>
+            <Button clicked={props.purchaseCanceled} btnType="Danger">CANCEL</Button>
+            <Button clicked={props.purchaseContinue} btnType="Success">CONTINUE</Button>
         </Auxilary>
     );
 };
