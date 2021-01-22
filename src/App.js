@@ -11,10 +11,11 @@ import Logout from './containers/Auth/Logout/Logout';
 import * as actions from './store/actions/index';
 
 const App = props => {
+  const { onTryAutoSignUp } = props;
 
   useEffect(() => {
-    props.onTryAutoSignUp();
-  }, [props]);
+    onTryAutoSignUp();
+  }, [onTryAutoSignUp]);
 
   let routes = <Switch>
     <Route path="/auth" render={(props) => <Auth {...props} />} />
